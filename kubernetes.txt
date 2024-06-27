@@ -1,0 +1,54 @@
+1. RBAC (Role-Based Access Control)
+Ensure that Role-Based Access Control is properly configured:
+
+Principle of Least Privilege: Assign minimum necessary permissions to service accounts, users, and groups.
+Use Namespaces: Utilize namespaces to create logical boundaries for resources and apply RBAC within namespaces.
+2. Network Policies
+Implement network policies to control ingress and egress traffic to/from pods:
+
+Limit communication to only necessary services and networks.
+Use Network Policies to enforce isolation and segment workloads.
+3. Secure Images
+Ensure that container images used in controllers are from trusted sources and free of vulnerabilities:
+
+Use image scanning tools to detect vulnerabilities.
+Employ policies to restrict usage of images from public repositories.
+4. Pod Security Policies
+Enforce Pod Security Policies to control the security context under which pods run:
+
+Specify requirements such as running with a non-root user, using read-only root filesystems, and limiting privilege escalation.
+5. Secrets Management
+Handle secrets securely:
+
+Use Kubernetes Secrets to store sensitive information.
+Avoid hard-coding secrets in configurations and files.
+Utilize external secret management solutions (e.g., Vault) for additional security.
+6. Audit Logging
+Enable auditing of Kubernetes API server and controller activities:
+
+Monitor and log controller actions and API requests.
+Use centralized logging to detect and investigate security incidents.
+7. Update and Patch
+Regularly update Kubernetes clusters, controller components, and underlying infrastructure:
+
+Apply security patches promptly to mitigate vulnerabilities.
+Monitor security advisories from Kubernetes and your cloud provider.
+8. Monitoring and Alerting
+Implement monitoring and alerting for controllers:
+
+Monitor controller performance, resource usage, and security events.
+Set up alerts for abnormal behavior or unauthorized access attempts.
+9. Limit Controller Permissions
+Restrict who can create, modify, or delete controllers:
+
+Use Kubernetes RBAC to limit access to controller APIs based on roles and responsibilities.
+Apply Kubernetes admission controllers to enforce custom policies and validations.
+10. Backup and Disaster Recovery
+Regularly back up critical Kubernetes resources, including controller configurations:
+
+Test backup and restore procedures to ensure data integrity and availability.
+Plan for disaster recovery scenarios and have contingency plans in place.
+Additional Tips:
+Hardening OS and Nodes: Secure underlying nodes and operating systems to protect against host-level attacks.
+Multi-Factor Authentication (MFA): Enable MFA for accessing Kubernetes management interfaces.
+Third-Party Audits: Consider third-party security audits and penetration testing to identify vulnerabilities.
